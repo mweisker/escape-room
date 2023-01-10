@@ -1,0 +1,28 @@
+Set up webpack
+    download all necessary dependencies
+    create the bundle and specify how it will handle all of my code
+    set up environment so it will work in development and production
+
+Set up server
+    require in all necessary info (express, hashing thing)
+    do all necessary set up (allowing json or whatever that's called)
+    create handler for any requests that don't exist
+    create error event handler
+        connect handler and midlware and specify where they need to go
+
+Set up db
+    go to mongoose and get access to my own mongo database
+    maybe set up two databases?  One for username and password, one for starting a session.
+    user data can also have a list of all their comments maybe, and I can parse that into the comment section.  Not sure if that would work
+
+Connect server and db
+    create mock crud requests so that I can test through postman if I can create requests and access the database
+
+Create html for log in / sign in forms
+Initialize react app form and research more on how to set that up
+
+Create react component that takes users to the comment section and high score chart
+
+Set up log in/ sign in forms to create new users and then allow those users to make comments.  Display the comments based on most recent postman
+
+Create escape room component and begin adding all the puzzles inside of it
