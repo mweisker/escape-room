@@ -13,6 +13,15 @@ MONGO_URI='mongodb+srv://mattweisker:U1iLftqR0oVKqzQz@escape-data.v5bkwgk.mongod
 app.use(express.json());
 
 // routes
+
+app.get('/', userController.findUsers, (req, res) => {
+    res.status(200).json(res.locals.users)
+})
+
+app.delete('/', userController.deleteAll, (req, res) => {
+    res.status(200).json(res.locals.deleted)
+})
+
 app.post('/', userController.createUser, (req, res) => {
     res.status(200).json(res.locals.users)
 })
@@ -21,10 +30,14 @@ app.post('/login', userController.verifyUser, (req, res) => {
     res.status(200).json(res.locals.user)
 })
 
-app.post('/comment', commentController.addComment, (req, res) => {
-    res.status(200).json(res.locals.comment)
+app.post('/comment', userController.findOneUser, commentController.addComment, (req, res) => {
+    res.status(200).json(res.locals.user)
+    // res.status(200);
 })
 
+app.post('/delete', userController.findOneUser, commentController.deleteComment, (req, res) => {
+    res.status(200).json(res.locals.deleted)
+})
 
 
 app.get('/api/message', (req, res) => {
