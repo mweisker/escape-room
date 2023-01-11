@@ -1,18 +1,25 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 require('dotenv').config()
 const mongoose = require('mongoose');
 mongoose.set("strictQuery", false);
 
 const userController = require('./controllers/userController');
-const commentController = require('./controllers/commentController')
+const commentController = require('./controllers/commentController');
 
 PORT=3000
 MONGO_URI='mongodb+srv://mattweisker:U1iLftqR0oVKqzQz@escape-data.v5bkwgk.mongodb.net/?retryWrites=true&w=majority'
 
+app.use(express.static(path.resolve(__dirname, '../build')))
 app.use(express.json());
 
 // routes
+
+app.get("/api", (req, res) => {
+    res.json({users: ['userOne', 'userTwo', 'userThree']})
+})
+
 
 app.get('/', userController.findUsers, (req, res) => {
     res.status(200).json(res.locals.users)
@@ -41,7 +48,7 @@ app.post('/delete', userController.findOneUser, commentController.deleteComment,
 
 
 app.get('/api/message', (req, res) => {
-    res.json({msg: 'Welcome to the escape hell'})
+    res.json({msg: 'Welcome to the escape room'})
 })
 
 // 404 handler
@@ -70,10 +77,10 @@ mongoose.connect(MONGO_URI, () => {
     console.log('mongo error ', error)
   })
 
-app.listen(PORT, () => {
+
+
+
+
+module.exports = app.listen(PORT, () => {
     console.log(`Listening on port: ${PORT}...`);
 });
-
-
-
-module.exports = app;

@@ -29,14 +29,32 @@ module.exports = {
         ]
     },
     devServer: {
+        host: 'localhost',
+        port: 8080,
         static: {
             publicPath: '/build',
             directory: path.resolve(__dirname, 'build')
         },
-        port: 8080,
         proxy: {
-            '/api': 'http://localhost:3000'
+            '/api/**': {
+                target: 'http://localhost:3000',
+                secure: false,
+            }
         }
+    },
+    resolve: {
+        fallback: { "url": require.resolve("url/"), "fs": false, "crypto": false },
+        extensions: ['.js', '.jsx']
     }
 }
 
+
+// "scripts": {
+//     "start": "nodemon server/server.js",
+//     "build": "NODE_ENV=production webpack",
+//     "dev": "NODE_ENV=development webpack-dev-server --open"
+//   },
+
+// "start": "nodemon server/server.js --open",
+// "build": "NODE_ENV=production webpack",
+// "dev": "NODE_ENV=development webpack-dev-server --open"
