@@ -41,6 +41,8 @@ usercontroller.findOneUser = async (req, res, next) => {
 usercontroller.createUser = async (req, res, next) => {
     console.log('invoking createUser');
     const { username, password } = req.body;
+    console.log(username);
+    console.log(password);
     // if (!userName || !password) return next('Missing username or password in createUser');
 
     try {

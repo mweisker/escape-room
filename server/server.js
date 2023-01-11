@@ -5,51 +5,19 @@ require('dotenv').config()
 const mongoose = require('mongoose');
 mongoose.set("strictQuery", false);
 
-const userController = require('./controllers/userController');
-const commentController = require('./controllers/commentController');
+const apiRouter = require('./routes/api');
 
 PORT=3000
 MONGO_URI='mongodb+srv://mattweisker:U1iLftqR0oVKqzQz@escape-data.v5bkwgk.mongodb.net/?retryWrites=true&w=majority'
 
-app.use(express.static(path.resolve(__dirname, '../build')))
+// handle parsing request body
 app.use(express.json());
 
-// routes
+// create static
+app.use(express.static(path.resolve(__dirname, '../build')))
 
-app.get("/api", (req, res) => {
-    res.json({users: ['userOne', 'userTwo', 'userThree']})
-})
-
-
-app.get('/', userController.findUsers, (req, res) => {
-    res.status(200).json(res.locals.users)
-})
-
-app.delete('/', userController.deleteAll, (req, res) => {
-    res.status(200).json(res.locals.deleted)
-})
-
-app.post('/', userController.createUser, (req, res) => {
-    res.status(200).json(res.locals.users)
-})
-
-app.post('/login', userController.verifyUser, (req, res) => {
-    res.status(200).json(res.locals.user)
-})
-
-app.post('/comment', userController.findOneUser, commentController.addComment, (req, res) => {
-    res.status(200).json(res.locals.user)
-    // res.status(200);
-})
-
-app.post('/delete', userController.findOneUser, commentController.deleteComment, (req, res) => {
-    res.status(200).json(res.locals.deleted)
-})
-
-
-app.get('/api/message', (req, res) => {
-    res.json({msg: 'Welcome to the escape room'})
-})
+// create router
+app.use("/api", apiRouter)
 
 // 404 handler
 app.use('*', (req, res) => {
