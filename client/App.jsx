@@ -2,7 +2,7 @@
 import React, { Component, useEffect, useState } from 'react';
 import { HashRouter, BrowserRouter, Switch, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-// import { LoginPage } from './pages/Login';
+import Login from './pages/Login';
 import Navbar from './components/Navbar';
 
 const App = () => {
@@ -16,6 +16,10 @@ const App = () => {
                         <Route
                             path='/'
                             element={<Home />}
+                        />
+                        <Route
+                            path='/login'
+                            element={<Login></Login>}
                         />
                     </Routes>
                 </div>

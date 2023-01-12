@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"
 
 const Home = () => {
     const [users, setUsers] = useState(null)
@@ -14,6 +15,12 @@ const Home = () => {
         fetchUsers()
     }, [])
 
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = '/login';
+        navigate(path);
+    }
+
     return (
         <div className="home">
             <div className="users">
@@ -21,6 +28,7 @@ const Home = () => {
                     <p key={user._id}>{user.username}</p>
                 ))}
             </div>
+            <button onClick={routeChange}>Login</button>
         </div>
     )
 }
