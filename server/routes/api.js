@@ -2,6 +2,9 @@ const express = require('express');
 
 const userController = require('../controllers/userController');
 const commentController = require('../controllers/commentController');
+const cookieController = require('../controllers/cookieController');
+const sessionController = require('../controllers/sessionController');
+
 
 const router = express.Router();
 
@@ -16,12 +19,12 @@ router.delete('/', userController.deleteAll, (req, res) => {
 })
 
 // Create new user
-router.post('/', userController.createUser, (req, res) => {
+router.post('/', userController.createUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
     res.status(200).json(res.locals.users)
 })
 
 // Verify someone is a user
-router.post('/login', userController.verifyUser, (req, res) => {
+router.post('/login', userController.verifyUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
     res.status(200).json(res.locals.user)
 })
 

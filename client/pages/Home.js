@@ -29,6 +29,10 @@ const Home = () => {
         let path = '/signin';
         navigate(path);
     }
+    const enter = () => {
+        let path = '/theroom';
+        navigate(path)
+    }
 
     return (
         <div className="home">
@@ -44,7 +48,7 @@ const Home = () => {
 
             <img className="opening-img" src={img}/>
             <h2>Enter...if you dare...</h2>
-            <button className="start-game">Enter</button>
+            <button className="start-game" onClick={enter}>Enter</button>
 
         </div>
     )

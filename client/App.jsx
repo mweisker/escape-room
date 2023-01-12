@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signin from './pages/Signin';
 import Navbar from './components/Navbar';
-
+import TheRoom from './pages/TheRoom';
 
 const App = () => {
 
@@ -26,6 +26,10 @@ const App = () => {
                         <Route
                             path='/signin'
                             element={<Signin></Signin>}
+                        />
+                        <Route
+                            path='/theroom'
+                            element={<TheRoom></TheRoom>}
                         />
                     </Routes>
                 </div>

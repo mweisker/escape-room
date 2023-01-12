@@ -46,8 +46,8 @@ usercontroller.createUser = async (req, res, next) => {
     // if (!userName || !password) return next('Missing username or password in createUser');
 
     try {
-        const users = await User.create({ username, password });
-        res.locals.users = users;
+        const user = await User.create({ username, password });
+        res.locals.user = user;
         return next();
     } catch (error) {
         return next({

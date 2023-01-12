@@ -17,7 +17,7 @@ const SigninForm = (props) => {
             handleSubmit();
         }
     }
-    
+
     const changeRoute = () => {
         let path = '/signin';
         navigate(path);
@@ -36,9 +36,14 @@ const SigninForm = (props) => {
                     'Content-Type': 'application/json'
                 }
             })
-            const json = await response.json()
+            // console.log('before json')
+            console.log(response)
+            // const json = await response.json()
+            // const json = JSON.parse(response)
+            // console.log('after json')
             if (!response.ok) {
-                setError(json.err)
+                // setError(json.err)
+                setError(responce.statusText)
             }
             if (response.ok) {
                 setUsername('')
@@ -59,9 +64,13 @@ const SigninForm = (props) => {
                     'Content-Type': 'application/json'
                 }
             })
-            const json = await response.json()
+            // console.log('before json')
+            // console.log(response)
+            // const json = await response.json()
+            // console.log('after json')
             if (!response.ok) {
-                setError(json.err)
+                // setError(json.err)
+                setError(response.statusText)
                 setTrouble(true)
             }
             if (response.ok) {
