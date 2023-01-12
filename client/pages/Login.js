@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import SigninForm from "../components/SigninFrom";
 
 const Login = () => {
     // const [users, setUsers] = useState(null)
@@ -17,6 +18,8 @@ const Login = () => {
     return (
         <div className="login">
             <h2>Login</h2>
+            <SigninForm form='login' />
+
         </div>
     )
 }

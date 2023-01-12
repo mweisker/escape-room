@@ -53,7 +53,7 @@ usercontroller.createUser = async (req, res, next) => {
         return next({
             log: 'Error in createUser',
             message: {
-                err: JSON.stringify(error)
+                err: error.message
             }
         });
     }

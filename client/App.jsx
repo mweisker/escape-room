@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Signin from './pages/Signin';
 import Navbar from './components/Navbar';
 
+
 const App = () => {
 
     return (
@@ -16,7 +17,7 @@ const App = () => {
                     <Routes>
                         <Route
                             path='/'
-                            element={<Home />}
+                            element={<Home/>}
                         />
                         <Route
                             path='/login'

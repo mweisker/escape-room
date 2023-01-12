@@ -8,8 +8,8 @@
     "start": "NODE_ENV=development webpack-dev-server",
     "start2": "NODE_ENV=development client.index.js",
     "build": "NODE_ENV=production webpack",
-    "dev": "nodemon server/server.js",
-    "dev2": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack-dev-server --open"
+    "devServ": "nodemon server/server.js",
+    "dev": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack-dev-server --open"
   },
   "keywords": [],
   "author": "",

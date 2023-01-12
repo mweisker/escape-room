@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import SigninForm from "../components/SigninFrom";
+
 
 const Signin = () => {
     // const [users, setUsers] = useState(null)
@@ -17,6 +19,7 @@ const Signin = () => {
     return (
         <div className="signin">
             <h2>Sign in</h2>
+            <SigninForm form='signin' />
         </div>
     )
 }
