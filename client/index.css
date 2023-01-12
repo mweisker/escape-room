@@ -25,6 +25,7 @@ header a {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .button {
@@ -38,6 +39,5 @@ header a {
 }
 
 .opening-img {
-    max-width: 50px;
-    border: 3px solid red;
+    margin: auto;
 }

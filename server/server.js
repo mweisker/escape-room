@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-require('dotenv').config()
 const mongoose = require('mongoose');
 mongoose.set("strictQuery", false);
+const cookieParser = require('cookie-parser')
 
 const apiRouter = require('./routes/api');
 
@@ -12,6 +12,8 @@ MONGO_URI='mongodb+srv://mattweisker:U1iLftqR0oVKqzQz@escape-data.v5bkwgk.mongod
 
 // handle parsing request body
 app.use(express.json());
+app.use(express.urlencoded());
+app.use(cookieParser());
 
 // create static
 app.use(express.static(path.resolve(__dirname, '../build')))

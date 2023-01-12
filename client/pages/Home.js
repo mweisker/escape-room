@@ -32,14 +32,19 @@ const Home = () => {
 
     return (
         <div className="home">
+            <div className="signin-buttons">
+                <button className='button login-button' onClick={login}>Login</button>
+                <button className="button login-button" onClick={signIn}>Sign up</button>
+            </div>
             <div className="users">
                 {users && users.map((user) => (
                     <p key={user._id}>{user.username}</p>
                 ))}
             </div>
-            <button className='button login-button' onClick={login}>Login</button>
-            <button className="button login-button" onClick={signIn}>Sign up</button>
+
             <img className="opening-img" src={img}/>
+            <h2>Enter...if you dare...</h2>
+            <button className="start-game">Enter</button>
 
         </div>
     )

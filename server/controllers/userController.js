@@ -65,12 +65,16 @@ usercontroller.verifyUser = async (req, res, next) => {
 
     try {
         const user = await User.findOne({ username })
-        if (!user) res.status(400).json({msg: 'user not found'});
+        // if (!user) res.status(400).json({msg: 'user not found'});
+        if (!user) return next({
+            log: 'Error in verifyUser',
+            message: { err: "User does not exist"}
+        })
         else {
             bcrypt.compare(password, user.password)
                 .then(result => {
                     if (!result) {
-                        res.status(400).json({msg: 'incorrect password'})
+                        next({ log: 'Error in verifyUser', message: {err: 'incorrect password'}})
                     } else {
                         res.locals.user = user;
                         return next();
@@ -81,7 +85,7 @@ usercontroller.verifyUser = async (req, res, next) => {
         return next({
             log: 'Error in verifyUser',
             message: {
-                err: JSON.stringify(error)
+                err: error.message
             }
         });
     }
