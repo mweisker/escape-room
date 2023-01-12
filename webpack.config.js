@@ -7,8 +7,10 @@ module.exports = {
     entry: './client/index.js',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'build')
+        path: path.resolve(__dirname, 'build'),
+        sourceMapFilename: 'bundle.js.map'
     },
+    devtool: "source-map",
     plugins: [
         new HTMLWebpackPlugin({
             template: './client/index.html'
@@ -22,9 +24,17 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env', '@babel/preset-react']
+                        presets: [
+                            '@babel/preset-env', 
+                            ['@babel/preset-react', {"runtime": "automatic"}]
+                        ]
                     }
                 }
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: ["style-loader", "css-loader"]
             }
         ]
     },
@@ -39,12 +49,13 @@ module.exports = {
             '/api/**': {
                 target: 'http://localhost:3000',
                 secure: false,
+                changeOrigin: true
             }
         }
     },
     resolve: {
         fallback: { "url": require.resolve("url/"), "fs": false, "crypto": false },
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.css']
     }
 }
 

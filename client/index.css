@@ -1,0 +1,26 @@
+body {
+    background-color: grey;
+    margin: 0;
+}
+
+header {
+    background-color: rgb(201, 197, 197);
+}
+
+header .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+}
+
+.pages {
+    width: 95%;
+}
