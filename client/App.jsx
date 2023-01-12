@@ -3,6 +3,7 @@ import React, { Component, useEffect, useState } from 'react';
 import { HashRouter, BrowserRouter, Switch, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Signin from './pages/Signin';
 import Navbar from './components/Navbar';
 
 const App = () => {
@@ -20,6 +21,10 @@ const App = () => {
                         <Route
                             path='/login'
                             element={<Login></Login>}
+                        />
+                        <Route
+                            path='/signin'
+                            element={<Signin></Signin>}
                         />
                     </Routes>
                 </div>

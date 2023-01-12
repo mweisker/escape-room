@@ -21,6 +21,18 @@ header a {
     text-decoration: none;
 }
 
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    padding: 10px;
+    font-size: 15px;
+    margin: 20px;
+}
+
 .pages {
-    width: 95%;
+    width: 100%;
 }
