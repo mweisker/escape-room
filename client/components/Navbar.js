@@ -1,6 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
+
+const Navbar = (props) => {
+    const logged = props.logged;
+
+    let navigate = useNavigate();
+    const login = () => {
+        let path = '/login';
+        navigate(path);
+    }
+    const signIn = () => {
+        let path = '/signin';
+        navigate(path);
+    }
+
+    console.log('navbar logged ', logged)
 
     return (
         <header>
@@ -8,6 +22,20 @@ const Navbar = () => {
                 <Link to='/'>
                     <h1>Escape room</h1>
                 </Link>
+                {(!logged) ? (
+                    <div className="signin-buttons">
+                        <button className='button login-button' onClick={login}>Login</button>
+                        <button className="button login-button" onClick={signIn}>Sign up</button>
+                    </div>
+                ) : (
+                    <div className="signin-buttons">
+                        <button className='button logout-bitton'>Log out</button>
+                    </div>
+                )}
+                {/* // <div className="signin-buttons">
+                //     <button className='button login-button' onClick={login}>Login</button>
+                //     <button className="button login-button" onClick={signIn}>Sign up</button>
+                // </div> */}
             </div>
         </header>
     )

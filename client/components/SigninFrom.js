@@ -65,7 +65,7 @@ const SigninForm = (props) => {
                 }
             })
             // console.log('before json')
-            // console.log(response)
+            console.log(response)
             // const json = await response.json()
             // console.log('after json')
             if (!response.ok) {

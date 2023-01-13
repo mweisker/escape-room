@@ -62,6 +62,8 @@ usercontroller.createUser = async (req, res, next) => {
 usercontroller.verifyUser = async (req, res, next) => {
     console.log('invoking verifyUser');
     const { username, password } = req.body;
+    console.log(username)
+    console.log(password)
 
     try {
         const user = await User.findOne({ username })
@@ -76,6 +78,7 @@ usercontroller.verifyUser = async (req, res, next) => {
                     if (!result) {
                         next({ log: 'Error in verifyUser', message: {err: 'incorrect password'}})
                     } else {
+                        console.log(user);
                         res.locals.user = user;
                         return next();
                     }

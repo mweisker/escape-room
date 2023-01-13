@@ -8,16 +8,34 @@ import Navbar from './components/Navbar';
 import TheRoom from './pages/TheRoom';
 
 const App = () => {
+    const [logged, setLogged] = useState(null);
+
+    useEffect(() => {
+
+        const findCookie = async () => {
+            const response = await fetch('/api/cookie')
+            console.log('response');
+            console.log(response)
+            const json = await response.json()
+            console.log(json)
+            if (json) {
+                console.log(response);
+                setLogged(true)
+            }
+        }
+        findCookie();
+
+    }, [])
 
     return (
         <div className='App'>
             <BrowserRouter>
-            <Navbar />
+            <Navbar logged={logged} />
                 <div className='pages'>
                     <Routes>
                         <Route
                             path='/'
-                            element={<Home/>}
+                            element={<Home logged={logged}/>}
                         />
                         <Route
                             path='/login'

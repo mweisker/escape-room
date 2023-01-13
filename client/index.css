@@ -41,3 +41,25 @@ header a {
 .opening-img {
     margin: auto;
 }
+
+.the-room {
+    margin: 3px solid red;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.room-background {
+    width: 82%;
+}
+
+.abs {
+    position: absolute;
+}
+
+.math {
+    top: 50px;
+    left: 50px;
+    width: 10%;
+}

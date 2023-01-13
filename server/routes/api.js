@@ -24,7 +24,7 @@ router.post('/', userController.createUser, cookieController.setSSIDCookie, sess
 })
 
 // Verify someone is a user
-router.post('/login', userController.verifyUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
+router.post('/login', userController.verifyUser, cookieController.setSSIDCookie, (req, res) => {
     res.status(200).json(res.locals.user)
 })
 
@@ -37,6 +37,11 @@ router.patch('/comment', userController.findOneUser, commentController.addCommen
 // Delete comment to user post
 router.patch('/delete', userController.findOneUser, commentController.deleteComment, (req, res) => {
     res.status(200).json(res.locals.deleted)
+})
+
+// Find if ssid cookie exists
+router.get('/cookie', cookieController.findCookie, (req, res) => {
+    res.status(200).json(res.locals.status)
 })
 
 module.exports = router;

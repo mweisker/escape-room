@@ -2,53 +2,75 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import img from '../img/opening-photo.png'
 
-const Home = () => {
-    const [users, setUsers] = useState(null)
+const Home = (props) => {
+    // const [users, setUsers] = useState(null)
+
+    const logged = props.logged
 
 
 
 
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            const response = await fetch('/api')
-            const json = await response.json()
-            if (response.ok) {
-                setUsers(json)
-            }
-        }
-        fetchUsers()
-    }, [])
+    // useEffect(() => {
+    //     const fetchUsers = async () => {
+    //         const response = await fetch('/api')
+    //         const json = await response.json()
+    //         if (response.ok) {
+    //             setUsers(json)
+    //         }
+    //     }
+    //     fetchUsers();
+    //     console.log('test')
+
+    // }, [])
 
     let navigate = useNavigate();
-    const login = () => {
-        let path = '/login';
-        navigate(path);
-    }
-    const signIn = () => {
-        let path = '/signin';
-        navigate(path);
-    }
+    // const login = () => {
+    //     let path = '/login';
+    //     navigate(path);
+    // }
+    // const signIn = () => {
+    //     let path = '/signin';
+    //     navigate(path);
+    // }
     const enter = () => {
-        let path = '/theroom';
-        navigate(path)
+        console.log('enter invoked')
+        console.log(logged)
+        if (logged) {
+            let path = '/theroom';
+            navigate(path)
+        } else {
+            let path = '/signin';
+            navigate(path)
+        }
+ 
     }
-
     return (
         <div className="home">
-            <div className="signin-buttons">
+            {/* <div className="signin-buttons">
                 <button className='button login-button' onClick={login}>Login</button>
                 <button className="button login-button" onClick={signIn}>Sign up</button>
-            </div>
-            <div className="users">
+            </div> */}
+
+            {/* <div className="users">
                 {users && users.map((user) => (
                     <p key={user._id}>{user.username}</p>
                 ))}
-            </div>
+            </div> */}
 
             <img className="opening-img" src={img}/>
             <h2>Enter...if you dare...</h2>
-            <button className="start-game" onClick={enter}>Enter</button>
+            <div>
+                {(logged === true) ? (
+                    <button className="button start-game" onClick={enter}>Enter</button>
+                ) : (
+                    <p>{logged}</p>
+                )
+            }
+            </div>
+            {/* <button className="start-game" onClick={enter}>Enter</button> */}
+            {/* {trouble && <button onClick={changeRoute}>Create new user</button>} */}
+
 
         </div>
     )
