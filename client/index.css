@@ -13,7 +13,22 @@ header .container {
     padding: 5px;
     display: flex;
     align-items: center;
+    justify-content: space-around;
+}
+
+.enter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+}
+
+.space {
+    width: 50px;
+}
+
+.login-buttons {
+    align-self: end;
 }
 
 header a {

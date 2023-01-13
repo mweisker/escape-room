@@ -59,10 +59,13 @@ const Home = (props) => {
             </div> */}
 
             <img className="opening-img" src={img}/>
-            <h2>Enter...if you dare...</h2>
+            {/* <h2>Enter...if you dare...</h2> */}
             <div>
                 {(logged === true) ? (
-                    <button className="button start-game" onClick={enter}>Enter</button>
+                    <div className="enter">
+                        <h2>Enter...if you dare...</h2>
+                        <button className="button start-game" onClick={enter}>Enter</button>
+                    </div>
                 ) : (
                     <p>{logged}</p>
                 )
