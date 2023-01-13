@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Signin from './pages/Signin';
 import Navbar from './components/Navbar';
 import TheRoom from './pages/TheRoom';
+import Math from './pages/Math'
 
 const App = () => {
     const [logged, setLogged] = useState(null);
@@ -48,6 +49,10 @@ const App = () => {
                         <Route
                             path='/theroom'
                             element={<TheRoom></TheRoom>}
+                        />
+                        <Route
+                            path='/math'
+                            element={<Math></Math>}
                         />
                     </Routes>
                 </div>

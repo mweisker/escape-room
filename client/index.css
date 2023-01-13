@@ -42,8 +42,7 @@ header a {
     margin: auto;
 }
 
-.the-room {
-    margin: 3px solid red;
+.background-div {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -51,7 +50,7 @@ header a {
 }
 
 .room-background {
-    width: 82%;
+    width: 81%;
 }
 
 .abs {
@@ -59,7 +58,58 @@ header a {
 }
 
 .math {
-    top: 50px;
-    left: 50px;
-    width: 10%;
+    top: 775px;
+    left: 300px;
+    width: 20%;
+}
+.map {
+    top: 775px;
+    left: 1150px;
+    width: 20%;
+}
+
+.detective {
+    top: 400px;
+    left: 1050px;
+    width: 8%;
+}
+
+.stone {
+    top: 410px;
+    left: 750px;
+    width: 20%;
+}
+.news1 {
+    top: 500px;
+    left: 800px;
+    width: 4%;
+}
+.news2 {
+    top: 500px;
+    left: 1000px;
+    width: 4%;
+}
+.news3 {
+    top: 475px;
+    left: 900px;
+    width: 4%;
+}
+.closet {
+    top: 75px;
+    left: 1200px;
+    width: 15%;
+}
+
+.math-input {
+    width: 150px;
+    height: 45px;
+    position: absolute;
+    top: 650px;
+    left: 1250px;
+}
+
+.back-button {
+    position: absolute;
+    top: 700px;
+    left: 1300px;
 }
