@@ -1,5 +1,5 @@
 {
-  "name": "task-tracker",
+  "name": "escape-room",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,7 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "leaflet": "^1.9.4",
     "node-sass": "^9.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
