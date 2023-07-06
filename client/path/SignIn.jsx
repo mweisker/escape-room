@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Login from '../components/login.jsx';
 import Register from '../components/register.jsx';
 import getCookie from '../util/getCookie.js';
+import image from '../img/detective.png';
 
 import { useNavigate } from 'react-router-dom';
 
-export default function MainPage() {
+export default function SignIn() {
   const [login, setLogin] = useState(true);
 
   const toggleLogin = () => {
@@ -14,6 +15,10 @@ export default function MainPage() {
   }
 
   const navigate = useNavigate();
+
+  const toMain = () => {
+    navigate('main-page')
+  }
 
   return (
     <div className='main-div'>
@@ -30,6 +35,12 @@ export default function MainPage() {
         <button onClick={toggleLogin}>{ login ? 'Register' : 'Sign in'}</button>
         </div>
       </div>
+
+      <img src={image} alt='just show the frickin image' />
+
+      <button onClick={toMain}>
+        To Main Page
+      </button>
 
       {/* { cookie ? <button onClick={() => navigate('/main-page')}>Sign in</button> : null} */}
     </div>

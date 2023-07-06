@@ -30,9 +30,9 @@ app.post('/login', userController.findUser, cookieController.setCookie, (req, re
   return res.status(200).json(res.locals.result)
 })
 
-app.get('/main-page', cookieController.verifyCookie, (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
-})
+// app.get('/main-page', cookieController.verifyCookie, (req, res) => {
+//   res.sendFile(path.join(__dirname, '../build', 'index.html'));
+// })
 
 app.get('/', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../index.html'));

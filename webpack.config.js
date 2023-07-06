@@ -28,10 +28,9 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/i,
-        type: "asset",
-        use: [ 'file-loader'
-        ],
+        type: 'asset/resource',
       }
+      
     ]
   }, 
   plugins: [ new HtmlWebpackPlugin({
