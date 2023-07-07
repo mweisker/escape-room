@@ -1,0 +1,59 @@
+
+.room-background {
+  width: 90vw;
+  height: 51vw;
+  margin: auto;
+  background-image: url('../img/room-background.png');
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto auto;
+}
+
+.grid-square {
+  border: 1px solid red;
+  width: 30vw;
+  height: 17vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+  }
+
+  .small-news {
+    width: 0vw;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    transition: opacity 1s, width 1s;
+    // transform: scale(0);
+  }
+  
+  .big-news {
+    width: 50vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    transition: opacity 1s, width 1s;
+    // transform: scale(1);
+  }
+
+  .news {
+    width: 3vw;
+  }
+}
+
+
+

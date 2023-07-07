@@ -18,6 +18,7 @@ export default function MainPage() {
       <img src={background} alt='Room-Background' />
       <img src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg'></img>
       <button onClick={() => {navigate('/')}}>To Sign In</button>
+      <button onClick={() => {navigate('the-room')}}>The Room</button>
     </div>
   )
 }

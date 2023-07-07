@@ -41,6 +41,8 @@ export default function SignIn() {
       <button onClick={toMain}>
         To Main Page
       </button>
+      <button onClick={() => {navigate('the-room')}}>The Room</button>
+
 
       {/* { cookie ? <button onClick={() => navigate('/main-page')}>Sign in</button> : null} */}
     </div>
