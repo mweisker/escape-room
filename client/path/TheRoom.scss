@@ -20,6 +20,7 @@
   align-items: center;
   justify-content: center;
 
+
   img {
     width: 100%;
     height: 100%;
@@ -53,7 +54,25 @@
   .news {
     width: 3vw;
   }
+
+  .news:hover {
+    cursor: url("../img/rsz_transparent-magnifying-glass.png"), auto;
+  }
+
+  .big-news:hover {
+    cursor: url("../img/rsz_transparent-magnifying-glass.png"), auto;
+  }
+  
 }
+
+// .news:hover {
+//   // cursor: url("https://thechurchcouncil.org/wp-content/uploads/2016/06/transparent-magnifying-glass.png"), auto;
+//   cursor: url("../img/rsz_transparent-magnifying-glass.png"), auto;
+//   background-image: url("../img/detective.png");
+//   width: 50vw;
+//   // background-color: red;
+//   // cursor: crosshair;
+// }
 
 
 

@@ -55,7 +55,7 @@ export default function TheRoom() {
         <div className='mid-left, grid-square'></div>
         <div className='mid-center, grid-square'>
           <div className='stone-table'>
-            <img onClick={() => handleNews('crown')} className='news-crown, news' src={newsCrown} />
+            <img onClick={() => handleNews('crown')} className='magnifying-glass, news-crown, news' src={newsCrown} />
             <img onClick={() => handleNews('vase')} className='news-vase, news' src={newsVase} />
             <img onClick={() => handleNews('sphinx')} className='news-sphinx, news' src={newsSphinx} />
             <img onClick={() => handleNews('crown')} className={ newsSize.crown === 'big' ? 'big-news' : 'small-news'} src={newsCrown} />
