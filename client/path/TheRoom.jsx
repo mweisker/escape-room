@@ -7,7 +7,7 @@ import stoneTableBare from '../img/stone-table-bare.png';
 import newsCrown from '../img/news-crown.png';
 import newsVase from '../img/news-vase.png';
 import newsSphinx from '../img/news-sphinx.png';
-
+import computer from '../img/computer.png'
 
 
 
@@ -52,7 +52,9 @@ export default function TheRoom() {
         <div className='top-right, grid-square'>
           <img className='closet-closed' src={closetClosed} />
         </div>
-        <div className='mid-left, grid-square'></div>
+        <div className='mid-left, grid-square'>
+          <img className='computer' src={computer} />
+        </div>
         <div className='mid-center, grid-square'>
           <div className='stone-table'>
             <img onClick={() => handleNews('crown')} className='magnifying-glass, news-crown, news' src={newsCrown} />
