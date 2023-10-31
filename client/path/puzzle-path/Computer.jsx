@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import Trio from '../../components/puzzle-components/trio.jsx';
 import './Computer.scss';
 
 export default function Computer() {
@@ -28,7 +29,8 @@ export default function Computer() {
       <div className='computer-background center-img'>
         <div className='computer-screen center-img'>
           { trio.map((num) => (
-            <div className='trio'>{num}</div>
+            // <div className='trio'>{num}</div>
+            <Trio num={num}/>
           ))}
         </div>
         <div className='button-holder center-img'>

@@ -1,3 +1,12 @@
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
 .computer-background {
   background-image: url('../../img/computer.png');
   background-position: center;
@@ -10,7 +19,7 @@
 .computer-screen {
   width: 20vw;
   height: 20vw;
-  background-color: blue;
+  // background-color: blue;
   top: 25%;
   display: flex;
   align-items: center;
@@ -18,9 +27,25 @@
 }
 
 .trio {
-  width: 20px;
-  height: 20px;
-  background-color: red;
+  width: 3vw;
+  height: 3vw;
+  // background-color: red;
+  animation: spin 5s linear infinite;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+
+  .orbs {
+    width: 1vw;
+    height: 1vw;
+    background-color: yellow;
+    border-radius: 50%;
+  }
+
+  .orb1 {
+    align-self: end;
+    // background-color: green;
+  }
 }
 
 .button-holder {
