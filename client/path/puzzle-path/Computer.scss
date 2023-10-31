@@ -1,0 +1,50 @@
+.computer-background {
+  background-image: url('../../img/computer.png');
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  width: 60vw;
+  height: 60vw;
+}
+
+.computer-screen {
+  width: 20vw;
+  height: 20vw;
+  background-color: blue;
+  top: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.trio {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+
+.button-holder {
+  width: 20vw;
+  height: 5vw;
+  // background-color: green;
+  top: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  button {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    background-color: pink;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+}
+
+h1 {
+  color: red;
+  font-size: 20em;
+}
