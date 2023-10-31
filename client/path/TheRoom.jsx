@@ -53,7 +53,8 @@ export default function TheRoom() {
           <img className='closet-closed' src={closetClosed} />
         </div>
         <div className='mid-left, grid-square'>
-          <img className='computer' src={computer} />
+          <button onClick={() => {navigate('/computer')}}>computer</button>
+          <img className='computer' src={computer} onClick={navigate('/computer')} />
         </div>
         <div className='mid-center, grid-square'>
           <div className='stone-table'>
