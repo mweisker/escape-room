@@ -12,13 +12,13 @@ const App = () => {
   return (
     <div>
       <Routes>
-        <Route path='/' element={ <Computer />} />
+        {/* <Route path='/' element={ <Computer />} /> */}
 
 
         {/* <Route path='/' element={ <SignIn />} /> */}
         <Route path='/main-page' element={ <MainPage />} />
         {/* <Route path='/the-room' element={ <TheRoom />} /> */}
-        {/* <Route path='/' element={ <TheRoom /> } /> */}
+        <Route path='/' element={ <TheRoom /> } /> 
         <Route path='/computer' element={ <Computer /> } />
       </Routes>
     </div>

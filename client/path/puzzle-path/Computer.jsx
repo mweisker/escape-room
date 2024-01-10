@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 import Trio from '../../components/puzzle-components/trio.jsx';
 import './Computer.scss';
+import home from '../../img/home.png';
+import Home from '../../components/helper-components/home-button.jsx';
+
+
 
 export default function Computer() {
   const [trio, useTrio] = useState([1, 2, 3])
@@ -39,7 +43,9 @@ export default function Computer() {
           <button onClick={() => increment([-1, trio[1], trio[2]])}></button>
         </div>
       </div>
-      <h1>Computer</h1>
+      {/* <h1>Computer</h1> */}
+      {/* <img className='home-button' src={home}></img> */}
+      <Home/>
     </>
   )
 }
