@@ -1,0 +1,24 @@
+.home-holder {
+  background-color: white;
+  border-radius: 50%;
+  width: 10vw;
+  height: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 80%;
+  left: 85%;
+  z-index: 999;
+
+
+  img {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+.home-holder:hover {
+  cursor: pointer;
+}
+
