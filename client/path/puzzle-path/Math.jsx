@@ -12,8 +12,10 @@ export default function Computer() {
 
   return (
     <>
-      <h1 className='math-welcome'>Math puzzle!</h1>
-      
+      {/* <h1 className='math-welcome'>Math puzzle!</h1> */}
+      <div className='math-background'>
+
+      </div>
       <Home/>
     </>
   )

@@ -4,3 +4,15 @@
   margin: none;
   // -webkit-text-stroke: 2px black;
 }
+
+.math-background {
+  background-image: url('../../img/math-puzzle.png');
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  width: 100%;
+  height: 50vw;
+  margin: auto;
+  position: absolute;
+  top: 15%;
+}
