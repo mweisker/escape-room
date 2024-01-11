@@ -4,6 +4,7 @@ import SignIn from './path/SignIn.jsx';
 import MainPage from './path/MainPage.jsx';
 import TheRoom from './path/TheRoom.jsx';
 import Computer from './path/puzzle-path/Computer.jsx';
+import Math from './path/puzzle-path/Math.jsx';
 
 
 
@@ -20,6 +21,7 @@ const App = () => {
         {/* <Route path='/the-room' element={ <TheRoom />} /> */}
         <Route path='/' element={ <TheRoom /> } /> 
         <Route path='/computer' element={ <Computer /> } />
+        <Route path='/math' element={ <Math /> } />
       </Routes>
     </div>
   )

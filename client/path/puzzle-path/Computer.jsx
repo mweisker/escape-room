@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 import Trio from '../../components/puzzle-components/trio.jsx';
 import './Computer.scss';
-import home from '../../img/home.png';
 import Home from '../../components/helper-components/home-button.jsx';
 
 

@@ -68,7 +68,7 @@ export default function TheRoom() {
         </div>
         <div className='mid-right, grid-square'></div>
         <div className='bottom-left, grid-square'>
-          <img src={math} />
+          <img src={math} onClick={() => {navigate('/math')}} />
         </div>
         <div className='bottom-center, grid-square'></div>
         <div className='bottom-right, grid-square'>
